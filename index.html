@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Service Company - Media</title>
+    <link rel="stylesheet" href="serverstyle.css">
+</head>
+<body>
+    <img src="/publicServiceBanner.jpg" alt="Public Service Server Banner" class="header-banner">
+    
+    <h1>Media Server</h1>
+    <p>Feel free to browse the archives.</p>
+    <ul>
+        <li><a href="/media/media-index.html">ALL MEDIA</a></li>
+        <li><a href="media/video/video-index.html">VIDEO</a></li>
+        <li><a href="media/audio/audio-index.html">AUDIO</a></li>
+        <li><a href="media/image/image-index.html">IMAGE</a></li>
+        <li><a href="media/text/text-index.html">TEXT</a></li>
+    </ul>
+    <br>
+    <div id="footer-placeholder"></div>
+<script>
+  fetch('/footerServer.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Index of video files available on the Public Service Server.">
+    <meta name="keywords" content="video production, audio production, copywriting, stock photography, marketing, advertising">
+    <meta name="author" content="www.PublicService.Company">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <title>Multimedia Archive - Public Service Company</title>
+    <link rel="stylesheet" href="../serverstyle.css">
+</head>
+<body>
+<a href="/index.html">
+  <img src="/publicServiceBanner.jpg" alt="Public Service Server Banner" class="header-banner">
+</a>    
+    <h1>ALL MEDIA</h1>
+    <p>Browse all available media on the Public Service Media Server.</p>
+    <ul>
+        <li><a href="video/video-index.html">VIDEO</a></li>
+        <li><a href="audio/audio-index.html">AUDIO</a></li>
+        <li><a href="image/image-index.html">IMAGE</a></li>
+        <li><a href="text/text-index.html">TEXT</a></li>
+    </ul>
+    <div id="footer-placeholder"></div>
+<script>
+  fetch('/footerServer.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
+</body>
+</html>

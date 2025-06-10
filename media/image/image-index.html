@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Index</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Index of image files available on the Public Service Server.">
+  <meta name="keywords" content="video production, stock photography, marketing, advertising, graphic design, drone photography">
+  <meta name="author" content="www.PublicService.Company">
+  <link rel="stylesheet" href="/serverstyle.css">
+</head>
+<body>
+<a href="/index.html">
+  <img src="/publicServiceBanner.jpg" alt="Public Service Server Banner" class="header-banner">
+</a>  
+  <h1>IMAGE INDEX</h1>
+
+<!-- JSON_MEDIA_LIST_START -->
+
+  <div id="jsonMediaList"><p>Loading...</p>
+    function formatDate(iso) {
+      const d = new Date(iso);
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+    function formatSize(bytes) {
+      if (bytes >= 1073741824) {
+        return (bytes / 1073741824).toFixed(2) + ' GB';
+      } else {
+        return (bytes / 1048576).toFixed(2) + ' MB';
+      }
+    }
+    fetch('image-index.json')
+      .then(r => r.json())
+      .then(list => {
+        const container = document.getElementById('jsonMediaList');
+        if (!Array.isArray(list) || list.length === 0) {
+          container.innerHTML = '<div>No files found.</div>';
+        } else {
+          container.innerHTML = '<div class="media-list-grid">' +
+            list.map(function(obj) {
+              var thumb = obj.thumbnail || '';
+              return '<div class="media-item">' +
+                '<a href="' + obj.path + '">' +
+                  '<img src="' + thumb + '" alt="Thumbnail for ' + obj.name + '">' +
+                '</a>' +
+                '<div>' +
+                  '<a href="' + obj.path + '">' + obj.name + '</a>' +
+                '</div>' +
+                '<div class="media-date">' +
+                  formatDate(obj.created) +
+                '</div>' +
+                '<div class="media-size">' +
+                  formatSize(obj.size) +
+                '</div>' +
+              '</div>';
+            }).join('') +
+          '</div>';
+        }
+      })
+      .catch(function() {
+        document.getElementById('jsonMediaList').innerHTML = '<div>Error loading media list.</div>';
+      });
+</div>
+
+<!-- JSON_MEDIA_LIST_END -->
+
+<script>
+fetch('image-index.json')
+  .then(r => r.json())
+  .then(list => {
+    const container = document.getElementById('jsonMediaList');
+    if (!Array.isArray(list) || list.length === 0) {
+      container.innerHTML = '<div>No files found.</div>';
+    } else {
+      container.innerHTML = '<div class="media-list-grid">' +
+        list.map(function(obj) {
+          var thumb = obj.thumbnail || '';
+          return '<div class="media-item">' +
+            '<a href="' + obj.path + '">' +
+              '<img src="' + thumb + '" alt="Thumbnail for ' + obj.name + '">' +
+            '</a>' +
+            '<div>' +
+              '<a href="' + obj.path + '">' + obj.name + '</a>' +
+            '</div>' +
+            '<div class="media-date">' +
+              (obj.created ? new Date(obj.created).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : '') +
+            '</div>' +
+            '<div class="media-size">' +
+              (obj.size ? (obj.size >= 1073741824 ? (obj.size / 1073741824).toFixed(2) + ' GB' : (obj.size / 1048576).toFixed(2) + ' MB') : '') +
+            '</div>' +
+          '</div>';
+        }).join('') +
+      '</div>';
+    }
+  })
+  .catch(function() {
+    document.getElementById('jsonMediaList').innerHTML = '<div>Error loading media list.</div>';
+  });
+</script>
+
+  <p><a href="../media-index.html">Back to All Media</a></p>
+  <p><a href="/index.html">Back to Home</a></p>
+    <br>
+    <div id="footer-placeholder"></div>
+<script>
+  fetch('/footerServer.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
+</body>
+</html>

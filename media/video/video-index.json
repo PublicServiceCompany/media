@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Cameli Reel",
+    "path": "Cameli Reel.mp4",
+    "type": "video",
+    "created": "2025-05-14T17:33:22.528Z",
+    "modified": "2025-05-14T17:33:22.538Z",
+    "size": 48613435,
+    "description": "Description text for placeholder.",
+    "thumbnail": "video-thumbnails/Cameli Reel.png"
+  },
+  {
+    "name": "Kamala Harris Socialist Equity",
+    "path": "Kamala Harris Socialist Equity.mp4",
+    "type": "video",
+    "created": "2022-10-01T07:32:19.000Z",
+    "modified": "2022-10-01T07:32:19.000Z",
+    "size": 3469322,
+    "description": "Description text for placeholder.",
+    "thumbnail": "video-thumbnails/Kamala Harris Socialist Equity.png"
+  },
+  {
+    "name": "Looking for an Emergency Vet_MVH_1080p",
+    "path": "Looking for an Emergency Vet_MVH_1080p.mov",
+    "type": "video",
+    "created": "2025-06-05T03:21:08.951Z",
+    "modified": "2025-06-05T03:21:33.525Z",
+    "size": 46283823,
+    "description": "Description text for placeholder.",
+    "thumbnail": "video-thumbnails/Looking for an Emergency Vet_MVH_1080p.png"
+  },
+  {
+    "name": "Pigs_and_Moo_VID-20220610-WA0004",
+    "path": "Pigs_and_Moo_VID-20220610-WA0004.mp4",
+    "type": "video",
+    "created": "2022-06-14T18:44:29.000Z",
+    "modified": "2022-06-14T18:44:29.000Z",
+    "size": 6190397,
+    "description": "Description text for placeholder.",
+    "thumbnail": "video-thumbnails/Pigs_and_Moo_VID-20220610-WA0004.png"
+  },
+  {
+    "name": "Pomme-VID-20220225-WA0004",
+    "path": "Pomme-VID-20220225-WA0004.mp4",
+    "type": "video",
+    "created": "2023-01-06T17:07:52.000Z",
+    "modified": "2022-06-14T18:44:33.000Z",
+    "size": 4366090,
+    "description": "Description text for placeholder.",
+    "thumbnail": "video-thumbnails/Pomme-VID-20220225-WA0004.png"
+  },
+  {
+    "name": "tide_colors_640x360",
+    "path": "tide_colors_640x360.mp4",
+    "type": "video",
+    "created": "2020-09-14T04:10:51.000Z",
+    "modified": "2021-12-02T09:38:58.000Z",
+    "size": 3995931,
+    "description": "Description text for placeholder.",
+    "thumbnail": "video-thumbnails/tide_colors_640x360.png"
+  }
+]
